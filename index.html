@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suaib S - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWixl+K9/SjZ6B7+0H3c0/Fh8jC8Tz0O8Z9Q5z6U7wD8h7nQ5z1Qy9qK2z7rF8z" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Custom styles for animations and font family */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #e5e7eb; /* Light text for contrast */
+        }
+        /* Custom linear gradient background */
+        .gradient-background {
+            background-image: linear-gradient(to bottom right, #1f2937, #000000);
+        }
+        .section-animation {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-animation.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="gradient-background">
+
+    <!-- Header Section -->
+    <header class="bg-gray-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center">
+                <!-- Profile Picture with a simple hover effect -->
+                <img src="suaib.jpg" alt="Profile" class="profile-pic w-20 h-20 rounded-full border-2 border-amber-500 hover:scale-110 transition-transform duration-300"/>
+                <div class="ml-4 text-center md:text-left">
+                    <h1 class="text-3xl font-bold tracking-wide">Suaib S</h1>
+                    <p class="text-sm text-gray-400 mt-1">Wordpress Developer &bull; Front-end Developer &bull; Java Developer &bull; Python Developer</p>
+                </div>
+            </div>
+            <!-- Navigation Links -->
+            <nav class="mt-4 md:mt-0">
+                <ul class="flex flex-wrap justify-center gap-4 text-lg">
+                    <li><a href="#about" class="hover:text-amber-400 transition-colors duration-300">About</a></li>
+                    <li><a href="#skills" class="hover:text-amber-400 transition-colors duration-300">Skills</a></li>
+                    <li><a href="#projects" class="hover:text-amber-400 transition-colors duration-300">Projects</a></li>
+                    <li><a href="#certifications" class="hover:text-amber-400 transition-colors duration-300">Certification</a></li>
+                    <li><a href="#contact" class="hover:text-amber-400 transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 space-y-24">
+
+        <!-- About Me Section -->
+        <section id="about" class="section-animation bg-white bg-opacity-10 rounded-xl p-8 shadow-lg">
+            <h2 class="text-4xl font-bold mb-6 text-center text-amber-400">About Me</h2>
+            <p class="text-lg text-center leading-relaxed max-w-3xl mx-auto text-gray-200">
+                I am Suaib, a dedicated and enthusiastic Computer Science and Engineering Student with a Strong intrest in Cybersecurity , Ethical Hacking , Risk Assessment , ISO 27001:2022 Information Security Management System (ISMS) and a freelance Website developer.
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section-animation">
+            <h2 class="text-4xl font-bold mb-8 text-center text-amber-400">Skills</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-4xl mx-auto">
+                <!-- Skills as stylish cards -->
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">Python</div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">Java</div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">C++</div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">HTML & CSS</div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">C</div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">Wordpress</div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">Web hosting & Domain management</div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">Git & GitHub</div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">ISO 27001:2022</div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">Web Designing</div>
+            </div>
+        </section>
+
+        <section id="tools" class="section-animation">
+            <h2 class="text-4xl font-bold mb-8 text-center text-amber-400">Tools and Software</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-4xl mx-auto">
+                <!-- Skills as stylish cards -->
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">Adobe Photoshop</div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">Visual Studio</div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">Microsoft Office</div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">Google Workspace</div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">Arduino IDE</div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">Figma</div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">Adobe Illustrator</div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">Cpanel for Web hosting</div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">Adobe Firefly Ai</div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-md text-center border border-gray-700 hover:bg-amber-500 hover:text-white transition-all duration-300">Blackbox Ai</div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-animation">
+            <h2 class="text-4xl font-bold mb-8 text-center text-amber-400">Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-400">Creative design</h3>
+                    <p class="text-gray-400 mb-4">This website is built with HTML and CSS.</p>
+                    <a href="https://suaib31.github.io/editorq.github.io/" class="inline-block bg-amber-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-600 transition-colors duration-300">Live Demo</a>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-400">Music Home Dubai</h3>
+                    <p class="text-gray-400 mb-4">Musical Academy website developed with Wordpress using Elementor</p>
+                    <a href="https://musichomedxb.ae/" class="inline-block bg-amber-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-600 transition-colors duration-300">Live Demo</a>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-400">Medica</h3>
+                    <p class="text-gray-400 mb-4">Medica is a hospital website located at Dubai, Uae. This website is developed with Wordpress.</p>
+                    <a href="https://soharon.co.uk/ark/" class="inline-block bg-amber-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-600 transition-colors duration-300">Live Demo</a>
+                </div>
+                <!-- Project Card 4 -->
+                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-400">Walnut</h3>
+                    <p class="text-gray-400 mb-4">Walnut infratech is a dubai based infrastructure solution company providing various security and home solution.</p>
+                    <p class="text-gray-400 mb-4">This website is developed by Wordpress.</p>
+                    <a href="https://walnutinfratech.com/" class="inline-block bg-amber-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-600 transition-colors duration-300">Live Demo</a>
+                </div>
+                <!-- Project Card 5 -->
+                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-400">Golden Galaxy </h3>
+                    <p class="text-gray-400 mb-4">Golden Galaxy construction is a construction company website</p>
+                    <p class="text-gray-400 mb-4">This website is developed by Wordpress.</p>
+                    <a href="https://ggcdxb.com/" class="inline-block bg-amber-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-600 transition-colors duration-300">Live Demo</a>
+                </div>
+                <!-- Project Card 6 -->
+                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-400">Western Bainoona </h3>
+                    <p class="text-gray-400 mb-4">Western Bainoona is a infrastructure and construction website</p>
+                    <p class="text-gray-400 mb-4">This website is developed by Wordpress.</p>
+                    <a href="https://westernbainoonagroup.com/" class="inline-block bg-amber-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-600 transition-colors duration-300">Live Demo</a>
+                </div>
+                <!-- Project Card 7 -->
+                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-400">Rawatan </h3>
+                    <p class="text-gray-400 mb-4">Rawatan ltd is a Agricultural solution company website</p>
+                    <p class="text-gray-400 mb-4">In this website, we developed in three languages, they are English, Kurdhish, Arabic.</p>
+                    <a href="https://rawatanltd.com/" class="inline-block bg-amber-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-600 transition-colors duration-300">Live Demo</a>
+                </div>
+                <!-- Project Card 8 -->
+                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-400">Relyon World</h3>
+                    <p class="text-gray-400 mb-4">Relyon world is french based construction company website</p>
+                    <p class="text-gray-400 mb-4">In this website, we developed in two languages, they are English & French.</p>
+                    <a href="https://relyonworld.com/" class="inline-block bg-amber-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-600 transition-colors duration-300">LIve Demo</a>
+                </div>
+                <!-- Project Card 9 -->
+                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-400">Rosewood Properties</h3>
+                    <p class="text-gray-400 mb-4">Rosewood Properties is a dubai based real estate company. website</p>
+                    <p class="text-gray-400 mb-4">This website developed with Wordpress.</p>
+                    <a href="https://rosewood-properties.com/ " class="inline-block bg-amber-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-600 transition-colors duration-300">Live Demo </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section-animation">
+            <h2 class="text-4xl font-bold mb-8 text-center text-amber-400">Certifications</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <!-- Certification Card 1 -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-400">Web Design & Development</h3>
+                    <p class="text-gray-400 mb-4">Issued Soharon Infotech</p>
+                    <a href="SUAIB Cert.pdf" class="inline-block text-amber-500 font-bold hover:text-amber-600 transition-colors duration-300">
+                        <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                    </a>
+                </div>
+                <!-- Certification Card 2 -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-400">ISO/IEC 27001:2022 ISMS Internal Auditor Training</h3>
+                    <p class="text-gray-400 mb-4">Issued by Brixton Astian CMS</p>
+                    <a href="Suaib -ISMS 2024 Certificate.pdf" class="inline-block text-amber-500 font-bold hover:text-amber-600 transition-colors duration-300">
+                        <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                    </a>
+                </div>
+                <!-- Certification Card 3 -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-400">Ethical Hacking Essentials (EHE)</h3>
+                    <p class="text-gray-400 mb-4">Issued by EC-Council</p>
+                    <a href="https://learn.eccouncil.org/certificate/a438e9e8-3dfc-45b6-96c6-d9969efc6ca6?logged=false" class="inline-block text-amber-500 font-bold hover:text-amber-600 transition-colors duration-300">
+                        <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                    </a>
+                </div>
+                <!-- Certification Card 4 -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-400">Digital Forensics Essentials (DFE)</h3>
+                    <p class="text-gray-400 mb-4">Issued by EC-Council</p>
+                    <a href="https://learn.eccouncil.org/certificate/abf71e8b-896b-4868-8ac2-a1b038695dd3?logged=false" class="inline-block text-amber-500 font-bold hover:text-amber-600 transition-colors duration-300">
+                        <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                    </a>
+                </div>
+                <!-- Certification Card 5 -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-400">A Practical Introduction to Cloud Computing</h3>
+                    <p class="text-gray-400 mb-4">Issued by EC-Council</p>
+                    <a href="https://learn.eccouncil.org/certificate/7fa8bfa7-6877-4575-9baa-3bb5b5bb7a5a?logged=false" class="inline-block text-amber-500 font-bold hover:text-amber-600 transition-colors duration-300">
+                        <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                    </a>
+                </div>
+            </div>
+        </section>
+        <br>
+
+        <!-- Responsive and Centered Resume Download Button -->
+        <div class="flex justify-center my-8">
+        <a href="Suaib_Resume.pdf" download class="bg-amber-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-amber-600 hover:scale-105 transition-all duration-300">
+        Download Resume
+    </a>
+</div>
+
+       
+
+        <!-- Contact Section -->
+        <section class='contact-container section-animation' id="contact">
+            <h2 class="text-4xl font-bold mb-8 text-center text-amber-400">Contact</h2>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-8 max-w-2xl mx-auto">
+                <a href="mailto:suaib2004@gmail.com" class="flex items-center gap-3 text-lg hover:text-amber-400 transition-colors duration-300">
+                    <i class="fas fa-envelope fa-2x text-amber-500"></i>
+                    <span>suaib2004@gmail.com</span>
+                </a>
+                <a href="https://www.linkedin.com/in/suaib-s-784294276/" target="_blank" class="flex items-center gap-3 text-lg hover:text-amber-400 transition-colors duration-300">
+                    <i class="fab fa-linkedin fa-2x text-amber-500"></i>
+                    <span>linkedin.com/in/johndoe</span>
+                </a>
+                <a href="https://github.com/suaib31/" target="_blank" class="flex items-center gap-3 text-lg hover:text-amber-400 transition-colors duration-300">
+                    <i class="fab fa-github fa-2x text-amber-500"></i>
+                    <span>github.com/suaib31</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-400 text-center py-6">
+        &copy; 2025 Suaib S &mdash; All Rights Reserved
+    </footer>
+
+    <script>
+        // JavaScript for scroll-based section animations
+        const sections = document.querySelectorAll('.section-animation');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
