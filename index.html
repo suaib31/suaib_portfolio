@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suaib S | DevOps, Cloud & AI Automation Engineer</title>
-    <meta name="description" content="Portfolio of Suaib S - DevOps Engineer, Cloud Specialist (AWS), AI Automation (n8n, Agentic AI, LLM Ops), and Full-Stack Developer.">
+    <title>Suaib S | Junior Software Engineer & DevOps Cloud Specialist</title>
+    <meta name="description" content="Portfolio of Suaib S - Junior Software Engineer at Aggregate Intelligence, Cloud DevOps Specialist (AWS), AI Automation (n8n, Agentic AI, LLM Ops), and Full-Stack Developer.">
     <meta name="keywords" content="DevOps, AWS, Docker, Jenkins, CI/CD, LLM Ops, Agentic AI, n8n, Prometheus, Grafana, Linux, Python, Suaib S">
     <meta name="author" content="Suaib S">
+
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,13 +20,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-        /* Modern DevOps Dark Theme Design System */
+        /* Modern DevOps Dark Theme Design System + Bootstrap 5 Overrides */
         :root {
             --bg-dark: #090d16;
-            --bg-card: rgba(17, 24, 39, 0.7);
-            --bg-card-hover: rgba(30, 41, 59, 0.85);
-            --border-color: rgba(56, 189, 248, 0.15);
-            --border-hover: rgba(6, 182, 212, 0.5);
+            --bg-card: rgba(17, 24, 39, 0.85);
+            --bg-card-hover: rgba(30, 41, 59, 0.95);
+            --border-color: rgba(56, 189, 248, 0.2);
+            --border-hover: rgba(6, 182, 212, 0.6);
             
             --primary: #06b6d4;      /* Neon Cyan */
             --primary-glow: rgba(6, 182, 212, 0.4);
@@ -32,23 +35,28 @@
             --accent: #10b981;       /* Emerald Success */
             --accent-glow: rgba(16, 185, 129, 0.3);
             
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --text-dim: #6b7280;
+            --text-main: #f8fafc;
+            --text-muted: #cbd5e1;   /* High contrast light slate blue-gray */
+            --text-dim: #94a3b8;     /* Visible subtle gray */
 
             --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
             --font-mono: 'Fira Code', monospace;
+
+            /* Override Bootstrap 5 theme variables */
+            --bs-body-color: #f8fafc;
+            --bs-body-color-rgb: 248, 250, 252;
+            --bs-body-bg: var(--bg-dark);
+            --bs-secondary-color: #cbd5e1;
+            --bs-secondary-color-rgb: 203, 213, 225;
+            --bs-tertiary-color: #94a3b8;
+            --bs-tertiary-color-rgb: 148, 163, 184;
+            --bs-emphasis-color: #ffffff;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* High-Contrast Typography & Bootstrap Text Class Overrides */
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
+            background-color: var(--bg-dark) !important;
+            color: var(--text-main) !important;
             font-family: var(--font-sans);
             line-height: 1.6;
             overflow-x: hidden;
@@ -59,9 +67,26 @@
             background-attachment: fixed;
         }
 
+        .text-muted, .small.text-muted {
+            color: #cbd5e1 !important;
+        }
+        .text-dim {
+            color: #94a3b8 !important;
+        }
+        .text-secondary {
+            color: #cbd5e1 !important;
+        }
+        p {
+            color: #cbd5e1;
+        }
+        p.text-muted, div.text-muted, span.text-muted, li.text-muted, ul.text-muted {
+            color: #cbd5e1 !important;
+        }
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
+            height: 6px;
         }
         ::-webkit-scrollbar-track {
             background: #0b1120;
@@ -75,7 +100,7 @@
             background: var(--primary);
         }
 
-        /* Typography & Utilities */
+        /* Typography & Color Overrides */
         .font-mono { font-family: var(--font-mono); }
         .text-gradient-cyan {
             background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 50%, #3b82f6 100%);
@@ -96,8 +121,8 @@
         /* Glassmorphism Containers */
         .glass-card {
             background: var(--bg-card);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             border: 1px solid var(--border-color);
             border-radius: 16px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -107,28 +132,29 @@
         .glass-card:hover {
             background: var(--bg-card-hover);
             border-color: var(--border-hover);
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             box-shadow: 0 12px 30px -10px var(--primary-glow);
         }
 
         .glass-nav {
-            background: rgba(9, 13, 22, 0.85);
+            background: rgba(9, 13, 22, 0.92) !important;
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         /* Neon Glow Badges */
-        .badge {
+        .badge-custom {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 4px 12px;
+            padding: 5px 14px;
             border-radius: 9999px;
             font-size: 0.78rem;
             font-weight: 600;
             font-family: var(--font-mono);
             letter-spacing: 0.5px;
+            text-decoration: none;
         }
         .badge-cyan {
             background: rgba(6, 182, 212, 0.12);
@@ -159,6 +185,7 @@
             box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 20px var(--primary-glow);
             overflow: hidden;
             font-family: var(--font-mono);
+            width: 100%;
         }
         .terminal-header {
             background: #0f172a;
@@ -177,10 +204,11 @@
         .dot-yellow { background: #f59e0b; }
         .dot-green { background: #10b981; }
         .terminal-body {
-            padding: 20px;
+            padding: 18px;
             color: #e5e7eb;
-            font-size: 0.9rem;
-            min-height: 280px;
+            font-size: 0.88rem;
+            min-height: 260px;
+            overflow-x: auto;
         }
         .command-prompt { color: #38bdf8; margin-right: 8px; }
         .command-arg { color: #34d399; }
@@ -194,6 +222,7 @@
             border-radius: 50%;
             box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
             animation: pulse-ring 2s infinite;
+            display: inline-block;
         }
         @keyframes pulse-ring {
             0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
@@ -202,45 +231,47 @@
         }
 
         /* Buttons */
-        .btn-primary {
+        .btn-custom-primary {
             background: linear-gradient(135deg, #06b6d4 0%, #2563eb 100%);
-            color: #ffffff;
-            padding: 12px 26px;
+            color: #ffffff !important;
+            padding: 12px 24px;
             border-radius: 10px;
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             box-shadow: 0 4px 20px var(--primary-glow);
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.15);
             cursor: pointer;
         }
-        .btn-primary:hover {
+        .btn-custom-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(6, 182, 212, 0.6);
             background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
         }
 
-        .btn-secondary {
+        .btn-custom-secondary {
             background: rgba(30, 41, 59, 0.8);
-            color: #e5e7eb;
-            padding: 12px 26px;
+            color: #e5e7eb !important;
+            padding: 12px 24px;
             border-radius: 10px;
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             border: 1px solid var(--border-color);
             transition: all 0.3s ease;
             cursor: pointer;
         }
-        .btn-secondary:hover {
+        .btn-custom-secondary:hover {
             background: rgba(51, 65, 85, 0.9);
             border-color: var(--primary);
-            color: #ffffff;
+            color: #ffffff !important;
             transform: translateY(-2px);
         }
 
@@ -255,6 +286,7 @@
             font-weight: 500;
             cursor: pointer;
             transition: all 0.25s ease;
+            white-space: nowrap;
         }
         .filter-btn.active, .filter-btn:hover {
             background: rgba(6, 182, 212, 0.15);
@@ -263,7 +295,20 @@
             box-shadow: 0 0 12px var(--primary-glow);
         }
 
-        /* Skill Card Grid */
+        /* Touch Scroll Filter Bar for Mobile */
+        .filter-bar-scroll {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 8px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .filter-bar-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Skill Card */
         .skill-card {
             background: rgba(15, 23, 42, 0.7);
             border: 1px solid var(--border-color);
@@ -273,6 +318,7 @@
             align-items: center;
             gap: 14px;
             transition: all 0.3s ease;
+            height: 100%;
         }
         .skill-card:hover {
             border-color: var(--primary);
@@ -301,7 +347,7 @@
             height: 100%;
         }
 
-        /* Fade-in scroll animations */
+        /* Scroll reveal animations */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -322,7 +368,7 @@
             border-radius: 8px;
             padding: 14px 20px;
             position: fixed;
-            z-index: 100;
+            z-index: 1050;
             left: 50%;
             bottom: 30px;
             transform: translateX(-50%);
@@ -338,143 +384,134 @@
         @keyframes fadein { from { bottom: 0; opacity: 0; } to { bottom: 30px; opacity: 1; } }
         @keyframes fadeout { from { bottom: 30px; opacity: 1; } to { bottom: 0; opacity: 0; } }
 
-        /* Container Layouts */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        /* Bootstrap Navbar Styling Overrides */
+        .navbar-nav .nav-link {
+            color: var(--text-muted) !important;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 8px 16px !important;
+            transition: color 0.2s ease;
+        }
+        .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+            color: #22d3ee !important;
+        }
+        .navbar-toggler {
+            border-color: var(--border-color);
+            padding: 6px 10px;
+        }
+        .navbar-toggler:focus {
+            box-shadow: 0 0 10px var(--primary-glow);
         }
 
-        /* Grid Utilities */
-        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-
-        @media (max-width: 1024px) {
-            .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+        /* Mobile Adjustments */
+        @media (max-width: 767.98px) {
+            section {
+                padding: 48px 0 !important;
+            }
+            .terminal-body {
+                font-size: 0.76rem !important;
+                padding: 14px !important;
+            }
+            .glass-card {
+                padding: 24px 18px !important;
+            }
+            h1 {
+                font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+            }
+            h2 {
+                font-size: 1.6rem !important;
+            }
         }
-        @media (max-width: 768px) {
-            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-            .hero-layout { flex-direction: column; text-align: center; }
-            .hero-btns { justify-content: center; }
-            .nav-links { display: none; }
-            .mobile-menu-btn { display: block !important; }
-        }
-
-        .mobile-menu-btn { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
-        .mobile-nav {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background: #090d16;
-            border-bottom: 1px solid var(--border-color);
-            padding: 20px;
-            flex-direction: column;
-            gap: 16px;
-        }
-        .mobile-nav.open { display: flex; }
     </style>
 </head>
 <body>
 
-    <!-- Sticky Navigation -->
-    <header class="glass-nav sticky top-0 z-50 transition-all duration-300">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding-top: 16px; padding-bottom: 16px;">
+    <!-- Sticky Navigation with Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark glass-nav py-2 py-lg-3">
+        <div class="container">
             <!-- Brand Logo -->
-            <a href="#" style="text-decoration: none; display: flex; align-items: center; gap: 12px;">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
                 <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, #06b6d4, #8b5cf6); display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; font-family: var(--font-mono); font-size: 1.2rem; box-shadow: 0 0 15px var(--primary-glow);">
                     S
                 </div>
                 <div>
                     <span style="font-weight: 700; font-size: 1.15rem; color: #fff; letter-spacing: -0.3px;">Suaib S</span>
-                    <div style="display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">
+                    <div class="d-flex align-items-center gap-1" style="font-size: 0.7rem; color: var(--text-muted); font-family: var(--font-mono);">
                         <span class="pulse-dot"></span> Jr. Software Engineer @ Aggregate Intelligence
                     </div>
                 </div>
             </a>
 
-            <!-- Desktop Nav Links -->
-            <nav class="nav-links" style="display: flex; align-items: center; gap: 28px;">
-                <a href="#about" style="color: var(--text-muted); text-decoration: none; font-size: 0.92rem; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='#22d3ee'" onmouseout="this.style.color='var(--text-muted)'">About</a>
-                <a href="#experience" style="color: var(--text-muted); text-decoration: none; font-size: 0.92rem; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='#22d3ee'" onmouseout="this.style.color='var(--text-muted)'">Experience</a>
-                <a href="#skills" style="color: var(--text-muted); text-decoration: none; font-size: 0.92rem; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='#22d3ee'" onmouseout="this.style.color='var(--text-muted)'">Skills Matrix</a>
-                <a href="#projects" style="color: var(--text-muted); text-decoration: none; font-size: 0.92rem; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='#22d3ee'" onmouseout="this.style.color='var(--text-muted)'">Projects</a>
-                <a href="#certifications" style="color: var(--text-muted); text-decoration: none; font-size: 0.92rem; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='#22d3ee'" onmouseout="this.style.color='var(--text-muted)'">Certifications</a>
-                <a href="#contact" style="color: var(--text-muted); text-decoration: none; font-size: 0.92rem; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='#22d3ee'" onmouseout="this.style.color='var(--text-muted)'">Contact</a>
-                <a href="Suaib_Resume.pdf" download class="btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">
-                    <i class="fas fa-file-arrow-down"></i> Resume
-                </a>
-            </nav>
-
-            <!-- Mobile Toggle -->
-            <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Toggle Navigation">
-                <i class="fas fa-bars" id="menu-icon"></i>
+            <!-- Mobile Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-        </div>
 
-        <!-- Mobile Navigation Menu -->
-        <div class="mobile-nav" id="mobileNav">
-            <a href="#about" onclick="toggleMobileNav()" style="color: var(--text-main); text-decoration: none;">About</a>
-            <a href="#experience" onclick="toggleMobileNav()" style="color: var(--text-main); text-decoration: none;">Experience</a>
-            <a href="#skills" onclick="toggleMobileNav()" style="color: var(--text-main); text-decoration: none;">Skills Matrix</a>
-            <a href="#projects" onclick="toggleMobileNav()" style="color: var(--text-main); text-decoration: none;">Projects</a>
-            <a href="#certifications" onclick="toggleMobileNav()" style="color: var(--text-main); text-decoration: none;">Certifications</a>
-            <a href="#contact" onclick="toggleMobileNav()" style="color: var(--text-main); text-decoration: none;">Contact</a>
-            <a href="Suaib_Resume.pdf" download class="btn-primary" style="text-align: center; justify-content: center;">
-                <i class="fas fa-file-arrow-down"></i> Download Resume
-            </a>
+            <!-- Nav Links Collapse -->
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-2 py-3 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills Matrix</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a href="Suaib_Resume.pdf" download class="btn-custom-secondary w-100 w-lg-auto" style="padding: 8px 18px; font-size: 0.85rem;">
+                            <i class="fas fa-file-arrow-down"></i> Resume
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <main>
         <!-- Hero Section -->
-        <section style="padding: 80px 0 60px 0; position: relative;">
+        <section class="py-4 py-md-5 my-2 my-md-4">
             <div class="container">
-                <div class="hero-layout" style="display: flex; align-items: center; justify-content: space-between; gap: 40px;">
+                <div class="row align-items-center g-4 g-lg-5">
                     
-                    <!-- Hero Info -->
-                    <div style="flex: 1; max-width: 620px;">
-                        <div class="badge badge-cyan" style="margin-bottom: 20px;">
+                    <!-- Hero Text Column -->
+                    <div class="col-12 col-lg-7 text-center text-lg-start">
+                        <div class="badge-custom badge-cyan mb-3">
                             <i class="fas fa-terminal"></i> JUNIOR SOFTWARE ENGINEER & DEVOPS ARCHITECT
                         </div>
-                        <h1 style="font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 800; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.5px;">
+                        <h1 class="fw-bold mb-3 text-white" style="font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.15; letter-spacing: -0.5px;">
                             Building <span class="text-gradient-cyan">Modern Software</span> & <span class="text-gradient-violet">Cloud Infrastructure</span>
                         </h1>
-                        <p style="font-size: 1.12rem; color: var(--text-muted); margin-bottom: 32px; line-height: 1.7;">
-                            Hi, I'm <strong style="color: #fff;">Suaib S</strong>. A <strong>Junior Software Engineer at Aggregate Intelligence</strong> and Cloud DevOps Engineer specializing in <strong>AWS Cloud Computing</strong>, <strong>Docker</strong>, <strong>Jenkins CI/CD</strong>, <strong>n8n Workflows</strong>, <strong>Agentic AI</strong>, and <strong>ISO 27001 Security</strong>.
+                        <p class="fs-5 mb-4 text-muted" style="line-height: 1.7;">
+                            Hi, I'm <strong class="text-white">Suaib S</strong>. A <strong>Junior Software Engineer at Aggregate Intelligence</strong> and Cloud DevOps Engineer specializing in <strong>AWS Cloud Computing</strong>, <strong>Docker</strong>, <strong>Jenkins CI/CD</strong>, <strong>n8n Workflows</strong>, <strong>Agentic AI</strong>, and <strong>ISO 27001 Security</strong>.
                         </p>
                         
-                        <div class="hero-btns" style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px;">
-                            <a href="#projects" class="btn-primary">
+                        <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3 mb-4 pb-2">
+                            <a href="#projects" class="btn-custom-primary">
                                 <i class="fas fa-rocket"></i> View Infrastructure Projects
                             </a>
-                            <a href="#contact" class="btn-secondary">
+                            <a href="#contact" class="btn-custom-secondary">
                                 <i class="fas fa-paper-plane"></i> Connect With Me
                             </a>
                         </div>
 
-                        <!-- Highlights Ticker -->
-                        <div style="display: flex; gap: 24px; padding-top: 20px; border-top: 1px solid var(--border-color); flex-wrap: wrap;">
-                            <div>
-                                <span style="font-size: 1.6rem; font-weight: 800; color: var(--primary); font-family: var(--font-mono);">25+</span>
-                                <p style="font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px;">DevOps & AI Tools</p>
+                        <!-- Stats Ticker -->
+                        <div class="row pt-3 border-top g-3 justify-content-center justify-content-lg-start" style="border-color: var(--border-color) !important;">
+                            <div class="col-6 col-sm-4 col-md-3 text-center text-lg-start">
+                                <span class="fs-3 fw-bold font-mono text-gradient-cyan">25+</span>
+                                <p class="small text-muted text-uppercase mb-0" style="font-size: 0.75rem; letter-spacing: 0.5px;">DevOps & AI Tools</p>
                             </div>
-                            <div style="border-left: 1px solid var(--border-color); padding-left: 24px;">
-                                <span style="font-size: 1.6rem; font-weight: 800; color: var(--secondary); font-family: var(--font-mono);">AWS</span>
-                                <p style="font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px;">EC2, S3, SQS Cloud</p>
+                            <div class="col-6 col-sm-4 col-md-4 text-center text-lg-start border-start border-sm-start" style="border-color: var(--border-color) !important;">
+                                <span class="fs-3 fw-bold font-mono text-gradient-violet">AWS</span>
+                                <p class="small text-muted text-uppercase mb-0" style="font-size: 0.75rem; letter-spacing: 0.5px;">EC2, S3, SQS Cloud</p>
                             </div>
-                            <div style="border-left: 1px solid var(--border-color); padding-left: 24px;">
-                                <span style="font-size: 1.6rem; font-weight: 800; color: var(--accent); font-family: var(--font-mono);">ISO/IEC</span>
-                                <p style="font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px;">27001:2022 Certified</p>
+                            <div class="col-12 col-sm-4 col-md-4 text-center text-lg-start border-sm-start" style="border-color: var(--border-color) !important;">
+                                <span class="fs-3 fw-bold font-mono text-gradient-emerald">ISO/IEC</span>
+                                <p class="small text-muted text-uppercase mb-0" style="font-size: 0.75rem; letter-spacing: 0.5px;">27001:2022 Certified</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Interactive CLI / Terminal Widget -->
-                    <div style="flex: 1; min-width: 320px; max-width: 520px;">
+                    <!-- CLI Terminal Widget Column -->
+                    <div class="col-12 col-lg-5">
                         <div class="terminal-window">
                             <div class="terminal-header">
                                 <div class="terminal-dots">
@@ -513,56 +550,66 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" style="padding: 70px 0;">
+        <section id="about" class="py-4 py-md-5">
             <div class="container">
-                <div class="glass-card reveal" style="padding: 40px;">
-                    <div style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap;">
-                        <!-- Profile Image Container -->
-                        <div style="position: relative; flex-shrink: 0; margin: 0 auto; display: flex; justify-content: center; align-items: center;">
-                            <div style="position: absolute; inset: -5px; border-radius: 50%; background: linear-gradient(135deg, #06b6d4, #8b5cf6, #10b981); filter: blur(8px); opacity: 0.75;"></div>
-                            <img src="suaib.jpg" alt="Suaib S Profile" style="position: relative; width: 170px; height: 170px; border-radius: 50%; object-fit: cover; object-position: center 15%; border: 3px solid #0f172a; display: block; margin: 0 auto; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+                <div class="glass-card reveal p-4 p-md-5">
+                    <div class="row align-items-center g-4">
+                        <!-- Profile Image Col -->
+                        <div class="col-12 col-md-4 text-center">
+                            <div class="position-relative d-inline-block">
+                                <div style="position: absolute; inset: -6px; border-radius: 50%; background: linear-gradient(135deg, #06b6d4, #8b5cf6, #10b981); filter: blur(8px); opacity: 0.75;"></div>
+                                <img src="suaib.jpg" alt="Suaib S Profile" class="img-fluid rounded-circle position-relative shadow" style="width: 170px; height: 170px; object-fit: cover; object-position: center 15%; border: 3px solid #0f172a;">
+                            </div>
                         </div>
 
-                        <!-- Bio Content -->
-                        <div style="flex: 1; min-width: 280px; text-align: left;">
-                            <div class="badge badge-violet" style="margin-bottom: 12px;">
+                        <!-- Bio Content Col -->
+                        <div class="col-12 col-md-8 text-center text-md-start">
+                            <div class="badge-custom badge-violet mb-2">
                                 <i class="fas fa-user-gear"></i> PROFESSIONAL PROFILE
                             </div>
-                            <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 16px;">
+                            <h2 class="fw-bold text-white mb-3" style="font-size: 1.9rem;">
                                 Bridging Software Development, Cloud & AI Automation
                             </h2>
-                            <p style="color: var(--text-muted); font-size: 1.02rem; line-height: 1.7; margin-bottom: 20px;">
+                            <p class="text-muted mb-4" style="font-size: 1.02rem; line-height: 1.7;">
                                 I am a dedicated <strong>Computer Science Engineer</strong> (Honours in Fullstack Java) working as a <strong>Junior Software Engineer</strong> at <strong>Aggregate Intelligence</strong> (previously R&D Engineering Intern) and <strong>Web Developer Intern</strong> at <strong>Soharon Infotech, UAE</strong>. I specialize in software development, <strong>DevOps, Cloud Computing (AWS), CI/CD Automation, LLM Ops, and Agentic AI workflows</strong>.
                             </p>
 
                             <!-- Core Pillars Grid -->
-                            <div class="grid-2" style="gap: 16px;">
-                                <div style="display: flex; gap: 12px; align-items: flex-start;">
-                                    <i class="fas fa-cloud text-gradient-cyan" style="font-size: 1.4rem; margin-top: 2px;"></i>
-                                    <div>
-                                        <h4 style="font-size: 0.95rem; font-weight: 600; color: #fff;">Cloud Infrastructure</h4>
-                                        <p style="font-size: 0.85rem; color: var(--text-muted);">AWS EC2, S3, SQS, Linux Server Administration, Networking</p>
+                            <div class="row g-3 text-start">
+                                <div class="col-12 col-sm-6">
+                                    <div class="d-flex align-items-start gap-3">
+                                        <i class="fas fa-cloud text-gradient-cyan fs-4 mt-1"></i>
+                                        <div>
+                                            <h4 class="h6 fw-bold text-white mb-1">Cloud Infrastructure</h4>
+                                            <p class="small text-muted mb-0">AWS EC2, S3, SQS, Linux Server Administration</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div style="display: flex; gap: 12px; align-items: flex-start;">
-                                    <i class="fas fa-cogs text-gradient-violet" style="font-size: 1.4rem; margin-top: 2px;"></i>
-                                    <div>
-                                        <h4 style="font-size: 0.95rem; font-weight: 600; color: #fff;">CI/CD & Automation</h4>
-                                        <p style="font-size: 0.85rem; color: var(--text-muted);">Docker, Jenkins, Shell & YAML Scripting, Git Flow, n8n</p>
+                                <div class="col-12 col-sm-6">
+                                    <div class="d-flex align-items-start gap-3">
+                                        <i class="fas fa-cogs text-gradient-violet fs-4 mt-1"></i>
+                                        <div>
+                                            <h4 class="h6 fw-bold text-white mb-1">CI/CD & Automation</h4>
+                                            <p class="small text-muted mb-0">Docker, Jenkins, Shell & YAML Scripting, Git Flow, n8n</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div style="display: flex; gap: 12px; align-items: flex-start;">
-                                    <i class="fas fa-brain text-gradient-emerald" style="font-size: 1.4rem; margin-top: 2px;"></i>
-                                    <div>
-                                        <h4 style="font-size: 0.95rem; font-weight: 600; color: #fff;">Agentic AI & Data</h4>
-                                        <p style="font-size: 0.85rem; color: var(--text-muted);">LLM Ops, Agentic AI, NumPy, Pandas, Postman API, PostgreSQL</p>
+                                <div class="col-12 col-sm-6">
+                                    <div class="d-flex align-items-start gap-3">
+                                        <i class="fas fa-brain text-gradient-emerald fs-4 mt-1"></i>
+                                        <div>
+                                            <h4 class="h6 fw-bold text-white mb-1">Agentic AI & Data</h4>
+                                            <p class="small text-muted mb-0">LLM Ops, Agentic AI, NumPy, Pandas, Postman API, PostgreSQL</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div style="display: flex; gap: 12px; align-items: flex-start;">
-                                    <i class="fas fa-shield-halved" style="font-size: 1.4rem; color: #f59e0b; margin-top: 2px;"></i>
-                                    <div>
-                                        <h4 style="font-size: 0.95rem; font-weight: 600; color: #fff;">Security Compliance</h4>
-                                        <p style="font-size: 0.85rem; color: var(--text-muted);">ISO/IEC 27001:2022 ISMS Internal Auditor, Ethical Hacking</p>
+                                <div class="col-12 col-sm-6">
+                                    <div class="d-flex align-items-start gap-3">
+                                        <i class="fas fa-shield-halved fs-4 mt-1" style="color: #f59e0b;"></i>
+                                        <div>
+                                            <h4 class="h6 fw-bold text-white mb-1">Security Compliance</h4>
+                                            <p class="small text-muted mb-0">ISO/IEC 27001:2022 ISMS Auditor, Ethical Hacking</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -573,90 +620,98 @@
         </section>
 
         <!-- Experience & Education Section -->
-        <section id="experience" style="padding: 70px 0;">
+        <section id="experience" class="py-4 py-md-5">
             <div class="container">
-                <div style="text-align: center; margin-bottom: 48px;">
-                    <div class="badge badge-emerald" style="margin-bottom: 12px;">
+                <div class="text-center mb-4 pb-2">
+                    <div class="badge-custom badge-emerald mb-2">
                         <i class="fas fa-briefcase"></i> CAREER & ACADEMICS
                     </div>
-                    <h2 style="font-size: 2.2rem; font-weight: 800;">Experience & Education</h2>
+                    <h2 class="fw-bold text-white" style="font-size: 2.2rem;">Experience & Education</h2>
                 </div>
 
-                <div class="grid-2">
+                <div class="row g-4">
                     <!-- Current Role: Aggregate Intelligence -->
-                    <div class="glass-card reveal" style="padding: 32px; border-color: var(--primary);">
-                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
-                            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(6, 182, 212, 0.15); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
-                                <i class="fas fa-laptop-code"></i>
+                    <div class="col-12 col-lg-6">
+                        <div class="glass-card reveal p-4 h-100" style="border-color: var(--primary);">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(6, 182, 212, 0.15); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <div>
+                                    <h3 class="h5 fw-bold text-white mb-1">Aggregate Intelligence</h3>
+                                    <p class="small font-mono mb-0" style="color: var(--primary);">Junior Software Engineer | Present</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Aggregate Intelligence</h3>
-                                <p style="font-size: 0.88rem; color: var(--primary); font-family: var(--font-mono);">Junior Software Engineer | Present</p>
-                            </div>
-                        </div>
 
-                        <ul style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;">Engineering software features, backend integrations, and data processing modules.</li>
-                            <li style="margin-bottom: 8px;">Building automated data pipelines, REST APIs, and database interactions.</li>
-                            <li style="margin-bottom: 8px;">Collaborating on DevOps deployment workflows, cloud infrastructure, and system optimization.</li>
-                        </ul>
+                            <ul class="text-muted small mb-0 ps-3" style="line-height: 1.7;">
+                                <li class="mb-2">Engineering software features, backend REST APIs, and data processing modules.</li>
+                                <li class="mb-2">Building automated data pipelines and database interactions.</li>
+                                <li>Collaborating on DevOps deployment workflows, cloud infrastructure, and system optimization.</li>
+                            </ul>
+                        </div>
                     </div>
 
                     <!-- Internship Role 1: Aggregate Intelligence -->
-                    <div class="glass-card reveal" style="padding: 32px;">
-                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
-                            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(139, 92, 246, 0.15); color: var(--secondary); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
-                                <i class="fas fa-microchip"></i>
+                    <div class="col-12 col-lg-6">
+                        <div class="glass-card reveal p-4 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(139, 92, 246, 0.15); color: var(--secondary); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <div>
+                                    <h3 class="h5 fw-bold text-white mb-1">Aggregate Intelligence</h3>
+                                    <p class="small font-mono mb-0" style="color: var(--secondary);">Research & Development (R&D) Intern</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Aggregate Intelligence</h3>
-                                <p style="font-size: 0.88rem; color: var(--secondary); font-family: var(--font-mono);">Research & Development (R&D) Intern</p>
-                            </div>
-                        </div>
 
-                        <ul style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;">Researched AI automation tools, LLM Ops integration, and internal workflow tools.</li>
-                            <li style="margin-bottom: 8px;">Developed data processing scripts using Python, NumPy, Pandas, and Postman API.</li>
-                            <li style="margin-bottom: 8px;">Built experimental automation prototypes to support engineering teams.</li>
-                        </ul>
+                            <ul class="text-muted small mb-0 ps-3" style="line-height: 1.7;">
+                                <li class="mb-2">Researched AI automation tools, LLM Ops integration, and internal workflow tools.</li>
+                                <li class="mb-2">Developed data processing scripts using Python, NumPy, Pandas, and Postman API.</li>
+                                <li>Built experimental automation prototypes to support engineering teams.</li>
+                            </ul>
+                        </div>
                     </div>
 
                     <!-- Internship Role 2: Soharon Infotech -->
-                    <div class="glass-card reveal" style="padding: 32px;">
-                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
-                            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(16, 185, 129, 0.15); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
-                                <i class="fas fa-globe"></i>
+                    <div class="col-12 col-lg-6">
+                        <div class="glass-card reveal p-4 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(16, 185, 129, 0.15); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div>
+                                    <h3 class="h5 fw-bold text-white mb-1">Soharon Infotech, UAE</h3>
+                                    <p class="small font-mono mb-0" style="color: var(--accent);">Web Developer Intern | Aug 2024 - Present</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Soharon Infotech, UAE</h3>
-                                <p style="font-size: 0.88rem; color: var(--accent); font-family: var(--font-mono);">Web Developer Intern | Aug 2024 - Present</p>
-                            </div>
-                        </div>
 
-                        <ul style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;">Design, develop, and deploy production client web applications and custom hosting solutions.</li>
-                            <li style="margin-bottom: 8px;">Configure web servers, cPanel, SSL certificates, DNS settings, and domain management.</li>
-                            <li style="margin-bottom: 8px;">Implement website performance optimization, WordPress security hardening, and plugin updates.</li>
-                            <li style="margin-bottom: 8px;">Collaborate on website wireframing in Figma and client handovers with documentation.</li>
-                        </ul>
+                            <ul class="text-muted small mb-0 ps-3" style="line-height: 1.7;">
+                                <li class="mb-2">Design, develop, and deploy production client web applications and custom hosting solutions.</li>
+                                <li class="mb-2">Configure web servers, cPanel, SSL certificates, DNS settings, and domain management.</li>
+                                <li class="mb-2">Implement website performance optimization, WordPress security hardening, and plugin updates.</li>
+                                <li>Collaborate on website wireframing in Figma and client handovers with documentation.</li>
+                            </ul>
+                        </div>
                     </div>
 
                     <!-- Education Card -->
-                    <div class="glass-card reveal" style="padding: 32px;">
-                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
-                            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(245, 158, 11, 0.15); color: #f59e0b; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
-                                <i class="fas fa-graduation-cap"></i>
+                    <div class="col-12 col-lg-6">
+                        <div class="glass-card reveal p-4 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(245, 158, 11, 0.15); color: #f59e0b; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <h3 class="h5 fw-bold text-white mb-1">Bachelor of Engineering (B.E.)</h3>
+                                    <p class="small font-mono mb-0" style="color: #f59e0b;">Computer Science & Engineering (Honours in Fullstack Java)</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Bachelor of Engineering (B.E.)</h3>
-                                <p style="font-size: 0.88rem; color: #f59e0b; font-family: var(--font-mono);">Computer Science & Engineering (Honours in Fullstack Java)</p>
-                            </div>
-                        </div>
 
-                        <div style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
-                            <p style="margin-bottom: 8px;"><strong>Institution:</strong> Al-Ameen Engineering College (2022 - 2026)</p>
-                            <p style="margin-bottom: 8px;"><strong>Academic Standing:</strong> GPA 8.0 / 10.0</p>
-                            <p style="margin-bottom: 8px;"><strong>Key Focus:</strong> Distributed Systems, Software Engineering, Cloud Architecture, Operating Systems, Computer Networks & Cybersecurity.</p>
+                            <div class="text-muted small" style="line-height: 1.7;">
+                                <p class="mb-2"><strong>Institution:</strong> Al-Ameen Engineering College (2022 - 2026)</p>
+                                <p class="mb-2"><strong>Academic Standing:</strong> GPA 8.0 / 10.0</p>
+                                <p class="mb-0"><strong>Key Focus:</strong> Distributed Systems, Software Engineering, Cloud Architecture, Operating Systems, Computer Networks & Cybersecurity.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -664,19 +719,19 @@
         </section>
 
         <!-- Skills Matrix Section -->
-        <section id="skills" style="padding: 70px 0;">
+        <section id="skills" class="py-4 py-md-5">
             <div class="container">
-                <div style="text-align: center; margin-bottom: 40px;">
-                    <div class="badge badge-cyan" style="margin-bottom: 12px;">
+                <div class="text-center mb-4 pb-2">
+                    <div class="badge-custom badge-cyan mb-2">
                         <i class="fas fa-layer-group"></i> TECHNICAL CAPABILITIES
                     </div>
-                    <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 12px;">DevOps, Cloud & AI Skills Matrix</h2>
-                    <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 30px auto;">
+                    <h2 class="fw-bold text-white mb-2" style="font-size: 2.2rem;">DevOps, Cloud & AI Skills Matrix</h2>
+                    <p class="text-muted max-w-600 mx-auto mb-4" style="max-width: 600px;">
                         Comprehensive list of modern cloud platforms, containerization tools, AI orchestration frameworks, and databases.
                     </p>
 
-                    <!-- Category Filter Buttons -->
-                    <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                    <!-- Touch Scrollable Skill Category Filter Bar -->
+                    <div class="filter-bar-scroll justify-content-start justify-content-md-center">
                         <button class="filter-btn active" onclick="filterSkills('all', this)">All Tech Stack</button>
                         <button class="filter-btn" onclick="filterSkills('cloud-devops', this)">Cloud & DevOps</button>
                         <button class="filter-btn" onclick="filterSkills('ai-automation', this)">AI & Automation</button>
@@ -687,217 +742,269 @@
                 </div>
 
                 <!-- Skill Cards Grid -->
-                <div class="grid-4" id="skillsGrid">
+                <div class="row g-3 g-md-4" id="skillsGrid">
                     <!-- Cloud & DevOps -->
-                    <div class="skill-card" data-category="cloud-devops">
-                        <div class="skill-icon"><i class="fab fa-aws"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">AWS EC2</h4>
-                            <span class="badge badge-cyan" style="font-size: 0.7rem; padding: 2px 8px;">Cloud Compute</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="cloud-devops">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fab fa-aws"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">AWS EC2</h4>
+                                <span class="badge-custom badge-cyan py-1 px-2" style="font-size: 0.7rem;">Cloud Compute</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="cloud-devops">
-                        <div class="skill-icon"><i class="fas fa-database"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">AWS S3</h4>
-                            <span class="badge badge-cyan" style="font-size: 0.7rem; padding: 2px 8px;">Object Storage</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="cloud-devops">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fas fa-database"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">AWS S3</h4>
+                                <span class="badge-custom badge-cyan py-1 px-2" style="font-size: 0.7rem;">Object Storage</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="cloud-devops">
-                        <div class="skill-icon"><i class="fas fa-list-check"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">AWS SQS</h4>
-                            <span class="badge badge-cyan" style="font-size: 0.7rem; padding: 2px 8px;">Message Queue</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="cloud-devops">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fas fa-list-check"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">AWS SQS</h4>
+                                <span class="badge-custom badge-cyan py-1 px-2" style="font-size: 0.7rem;">Message Queue</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="cloud-devops">
-                        <div class="skill-icon"><i class="fab fa-docker"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">Docker</h4>
-                            <span class="badge badge-cyan" style="font-size: 0.7rem; padding: 2px 8px;">Containerization</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="cloud-devops">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fab fa-docker"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">Docker</h4>
+                                <span class="badge-custom badge-cyan py-1 px-2" style="font-size: 0.7rem;">Containerization</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="cloud-devops">
-                        <div class="skill-icon"><i class="fab fa-jenkins"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">Jenkins</h4>
-                            <span class="badge badge-cyan" style="font-size: 0.7rem; padding: 2px 8px;">CI/CD Pipelines</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="cloud-devops">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fab fa-jenkins"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">Jenkins</h4>
+                                <span class="badge-custom badge-cyan py-1 px-2" style="font-size: 0.7rem;">CI/CD Pipelines</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="cloud-devops">
-                        <div class="skill-icon"><i class="fas fa-diagram-project"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">CI / CD</h4>
-                            <span class="badge badge-cyan" style="font-size: 0.7rem; padding: 2px 8px;">Automation</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="cloud-devops">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fas fa-diagram-project"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">CI / CD</h4>
+                                <span class="badge-custom badge-cyan py-1 px-2" style="font-size: 0.7rem;">Automation</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="cloud-devops">
-                        <div class="skill-icon"><i class="fab fa-linux"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">Linux</h4>
-                            <span class="badge badge-cyan" style="font-size: 0.7rem; padding: 2px 8px;">OS & Admin</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="cloud-devops">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fab fa-linux"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">Linux</h4>
+                                <span class="badge-custom badge-cyan py-1 px-2" style="font-size: 0.7rem;">OS & Admin</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="cloud-devops">
-                        <div class="skill-icon"><i class="fas fa-terminal"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">Shell Scripting</h4>
-                            <span class="badge badge-cyan" style="font-size: 0.7rem; padding: 2px 8px;">Bash / Automation</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="cloud-devops">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fas fa-terminal"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">Shell Scripting</h4>
+                                <span class="badge-custom badge-cyan py-1 px-2" style="font-size: 0.7rem;">Bash / Automation</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="cloud-devops">
-                        <div class="skill-icon"><i class="fas fa-file-code"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">YAML Scripting</h4>
-                            <span class="badge badge-cyan" style="font-size: 0.7rem; padding: 2px 8px;">Config & Manifests</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="cloud-devops">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fas fa-file-code"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">YAML Scripting</h4>
+                                <span class="badge-custom badge-cyan py-1 px-2" style="font-size: 0.7rem;">Config & Manifests</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="cloud-devops">
-                        <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">Git & Git Flow</h4>
-                            <span class="badge badge-cyan" style="font-size: 0.7rem; padding: 2px 8px;">Version Control</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="cloud-devops">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">Git & Git Flow</h4>
+                                <span class="badge-custom badge-cyan py-1 px-2" style="font-size: 0.7rem;">Version Control</span>
+                            </div>
                         </div>
                     </div>
 
                     <!-- AI & Automation -->
-                    <div class="skill-card" data-category="ai-automation">
-                        <div class="skill-icon" style="color: var(--secondary); background: rgba(139, 92, 246, 0.1);"><i class="fas fa-robot"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">Agentic AI</h4>
-                            <span class="badge badge-violet" style="font-size: 0.7rem; padding: 2px 8px;">Autonomous Agents</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="ai-automation">
+                        <div class="skill-card">
+                            <div class="skill-icon" style="color: var(--secondary); background: rgba(139, 92, 246, 0.1);"><i class="fas fa-robot"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">Agentic AI</h4>
+                                <span class="badge-custom badge-violet py-1 px-2" style="font-size: 0.7rem;">Autonomous Agents</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="ai-automation">
-                        <div class="skill-icon" style="color: var(--secondary); background: rgba(139, 92, 246, 0.1);"><i class="fas fa-microchip"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">LLM Ops</h4>
-                            <span class="badge badge-violet" style="font-size: 0.7rem; padding: 2px 8px;">Model Deployment</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="ai-automation">
+                        <div class="skill-card">
+                            <div class="skill-icon" style="color: var(--secondary); background: rgba(139, 92, 246, 0.1);"><i class="fas fa-microchip"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">LLM Ops</h4>
+                                <span class="badge-custom badge-violet py-1 px-2" style="font-size: 0.7rem;">Model Deployment</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="ai-automation">
-                        <div class="skill-icon" style="color: var(--secondary); background: rgba(139, 92, 246, 0.1);"><i class="fas fa-network-wired"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">n8n</h4>
-                            <span class="badge badge-violet" style="font-size: 0.7rem; padding: 2px 8px;">Workflow Automation</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="ai-automation">
+                        <div class="skill-card">
+                            <div class="skill-icon" style="color: var(--secondary); background: rgba(139, 92, 246, 0.1);"><i class="fas fa-network-wired"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">n8n</h4>
+                                <span class="badge-custom badge-violet py-1 px-2" style="font-size: 0.7rem;">Workflow Engine</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="ai-automation">
-                        <div class="skill-icon" style="color: var(--secondary); background: rgba(139, 92, 246, 0.1);"><i class="fas fa-gears"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">Automation</h4>
-                            <span class="badge badge-violet" style="font-size: 0.7rem; padding: 2px 8px;">System Workflows</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="ai-automation">
+                        <div class="skill-card">
+                            <div class="skill-icon" style="color: var(--secondary); background: rgba(139, 92, 246, 0.1);"><i class="fas fa-gears"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">Automation</h4>
+                                <span class="badge-custom badge-violet py-1 px-2" style="font-size: 0.7rem;">System Workflows</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="ai-automation">
-                        <div class="skill-icon" style="color: var(--secondary); background: rgba(139, 92, 246, 0.1);"><i class="fas fa-calculator"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">NumPy</h4>
-                            <span class="badge badge-violet" style="font-size: 0.7rem; padding: 2px 8px;">Numerical Computing</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="ai-automation">
+                        <div class="skill-card">
+                            <div class="skill-icon" style="color: var(--secondary); background: rgba(139, 92, 246, 0.1);"><i class="fas fa-calculator"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">NumPy</h4>
+                                <span class="badge-custom badge-violet py-1 px-2" style="font-size: 0.7rem;">Numerical Computing</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="ai-automation">
-                        <div class="skill-icon" style="color: var(--secondary); background: rgba(139, 92, 246, 0.1);"><i class="fas fa-table"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">Pandas</h4>
-                            <span class="badge badge-violet" style="font-size: 0.7rem; padding: 2px 8px;">Data Analysis</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="ai-automation">
+                        <div class="skill-card">
+                            <div class="skill-icon" style="color: var(--secondary); background: rgba(139, 92, 246, 0.1);"><i class="fas fa-table"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">Pandas</h4>
+                                <span class="badge-custom badge-violet py-1 px-2" style="font-size: 0.7rem;">Data Analysis</span>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Monitoring & DB -->
-                    <div class="skill-card" data-category="monitoring-db">
-                        <div class="skill-icon" style="color: var(--accent); background: rgba(16, 185, 129, 0.1);"><i class="fas fa-chart-line"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">Grafana</h4>
-                            <span class="badge badge-emerald" style="font-size: 0.7rem; padding: 2px 8px;">Dashboards & Observability</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="monitoring-db">
+                        <div class="skill-card">
+                            <div class="skill-icon" style="color: var(--accent); background: rgba(16, 185, 129, 0.1);"><i class="fas fa-chart-line"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">Grafana</h4>
+                                <span class="badge-custom badge-emerald py-1 px-2" style="font-size: 0.7rem;">Observability</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="monitoring-db">
-                        <div class="skill-icon" style="color: var(--accent); background: rgba(16, 185, 129, 0.1);"><i class="fas fa-fire"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">Prometheus</h4>
-                            <span class="badge badge-emerald" style="font-size: 0.7rem; padding: 2px 8px;">Metrics & Alerting</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="monitoring-db">
+                        <div class="skill-card">
+                            <div class="skill-icon" style="color: var(--accent); background: rgba(16, 185, 129, 0.1);"><i class="fas fa-fire"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">Prometheus</h4>
+                                <span class="badge-custom badge-emerald py-1 px-2" style="font-size: 0.7rem;">Metrics & Alerts</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="monitoring-db">
-                        <div class="skill-icon" style="color: var(--accent); background: rgba(16, 185, 129, 0.1);"><i class="fas fa-server"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">PostgreSQL (psql)</h4>
-                            <span class="badge badge-emerald" style="font-size: 0.7rem; padding: 2px 8px;">Relational Database</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="monitoring-db">
+                        <div class="skill-card">
+                            <div class="skill-icon" style="color: var(--accent); background: rgba(16, 185, 129, 0.1);"><i class="fas fa-server"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">PostgreSQL (psql)</h4>
+                                <span class="badge-custom badge-emerald py-1 px-2" style="font-size: 0.7rem;">Relational DB</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="monitoring-db">
-                        <div class="skill-icon" style="color: var(--accent); background: rgba(16, 185, 129, 0.1);"><i class="fas fa-cloud-arrow-up"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">Postman API</h4>
-                            <span class="badge badge-emerald" style="font-size: 0.7rem; padding: 2px 8px;">API Testing & Testing</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="monitoring-db">
+                        <div class="skill-card">
+                            <div class="skill-icon" style="color: var(--accent); background: rgba(16, 185, 129, 0.1);"><i class="fas fa-cloud-arrow-up"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">Postman API</h4>
+                                <span class="badge-custom badge-emerald py-1 px-2" style="font-size: 0.7rem;">API Testing</span>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Languages & Web -->
-                    <div class="skill-card" data-category="languages-web">
-                        <div class="skill-icon"><i class="fab fa-python"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">Python</h4>
-                            <span class="badge badge-cyan" style="font-size: 0.7rem; padding: 2px 8px;">Scripting & AI</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="languages-web">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fab fa-python"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">Python</h4>
+                                <span class="badge-custom badge-cyan py-1 px-2" style="font-size: 0.7rem;">Scripting & AI</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="languages-web">
-                        <div class="skill-icon"><i class="fab fa-java"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">Java (Honours)</h4>
-                            <span class="badge badge-cyan" style="font-size: 0.7rem; padding: 2px 8px;">Object Oriented</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="languages-web">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fab fa-java"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">Java (Honours)</h4>
+                                <span class="badge-custom badge-cyan py-1 px-2" style="font-size: 0.7rem;">Object Oriented</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="languages-web">
-                        <div class="skill-icon"><i class="fas fa-code"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">C & C++</h4>
-                            <span class="badge badge-cyan" style="font-size: 0.7rem; padding: 2px 8px;">Systems Programming</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="languages-web">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fas fa-code"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">C & C++</h4>
+                                <span class="badge-custom badge-cyan py-1 px-2" style="font-size: 0.7rem;">Systems Programming</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="languages-web">
-                        <div class="skill-icon"><i class="fab fa-wordpress"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">WordPress</h4>
-                            <span class="badge badge-cyan" style="font-size: 0.7rem; padding: 2px 8px;">CMS & Hosting</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="languages-web">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fab fa-wordpress"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">WordPress</h4>
+                                <span class="badge-custom badge-cyan py-1 px-2" style="font-size: 0.7rem;">CMS & Hosting</span>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Security & Tools -->
-                    <div class="skill-card" data-category="security-tools">
-                        <div class="skill-icon" style="color: #f59e0b; background: rgba(245, 158, 11, 0.1);"><i class="fas fa-shield"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">ISO/IEC 27001:2022</h4>
-                            <span class="badge badge-amber" style="font-size: 0.7rem; padding: 2px 8px;">ISMS Internal Auditor</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="security-tools">
+                        <div class="skill-card">
+                            <div class="skill-icon" style="color: #f59e0b; background: rgba(245, 158, 11, 0.1);"><i class="fas fa-shield"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">ISO/IEC 27001:2022</h4>
+                                <span class="badge-custom badge-amber py-1 px-2" style="font-size: 0.7rem;">ISMS Auditor</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="skill-card" data-category="security-tools">
-                        <div class="skill-icon" style="color: #f59e0b; background: rgba(245, 158, 11, 0.1);"><i class="fas fa-user-ninja"></i></div>
-                        <div>
-                            <h4 style="font-size: 0.98rem; font-weight: 700; color: #fff;">Ethical Hacking (EHE)</h4>
-                            <span class="badge badge-amber" style="font-size: 0.7rem; padding: 2px 8px;">EC-Council</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 skill-item" data-category="security-tools">
+                        <div class="skill-card">
+                            <div class="skill-icon" style="color: #f59e0b; background: rgba(245, 158, 11, 0.1);"><i class="fas fa-user-ninja"></i></div>
+                            <div>
+                                <h4 class="h6 fw-bold text-white mb-1">Ethical Hacking (EHE)</h4>
+                                <span class="badge-custom badge-amber py-1 px-2" style="font-size: 0.7rem;">EC-Council</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -905,341 +1012,369 @@
         </section>
 
         <!-- Projects Showcase Section -->
-        <section id="projects" style="padding: 70px 0;">
+        <section id="projects" class="py-4 py-md-5">
             <div class="container">
-                <div style="text-align: center; margin-bottom: 44px;">
-                    <div class="badge badge-violet" style="margin-bottom: 12px;">
+                <div class="text-center mb-4 pb-2">
+                    <div class="badge-custom badge-violet mb-2">
                         <i class="fas fa-diagram-project"></i> FEATURED WORK
                     </div>
-                    <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 12px;">Projects & Deployed Solutions</h2>
-                    <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
-                        Selected projects spanning Cloud Infrastructure, AI Workflows, and Enterprise Web Applications.
+                    <h2 class="fw-bold text-white mb-2" style="font-size: 2.2rem;">Projects & Deployed Solutions</h2>
+                    <p class="text-muted max-w-600 mx-auto" style="max-width: 600px;">
+                        Selected client projects spanning Web Applications, Custom Hosting, and Enterprise Portals.
                     </p>
                 </div>
 
-                <div class="grid-3" style="align-items: stretch;">
+                <div class="row g-4">
                     <!-- Project 1: Music Home Dubai -->
-                    <div class="glass-card project-card reveal" style="padding: 24px;">
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                                <span class="badge badge-emerald"><i class="fas fa-globe"></i> Web Engineering</span>
-                                <i class="fas fa-music" style="color: var(--accent);"></i>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="glass-card project-card reveal p-4 h-100">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge-custom badge-emerald"><i class="fas fa-globe"></i> Web Engineering</span>
+                                    <i class="fas fa-music" style="color: var(--accent);"></i>
+                                </div>
+                                <h3 class="h5 fw-bold text-white mb-2">Music Home Dubai</h3>
+                                <p class="small text-muted mb-3" style="line-height: 1.6;">
+                                    Premier Dubai musical academy portal with custom hosting configuration, speed optimization, and dynamic course booking.
+                                </p>
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge-custom badge-cyan" style="font-size: 0.7rem;">WordPress</span>
+                                    <span class="badge-custom badge-cyan" style="font-size: 0.7rem;">Elementor</span>
+                                    <span class="badge-custom badge-cyan" style="font-size: 0.7rem;">Web Hosting</span>
+                                </div>
                             </div>
-                            <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 10px;">Music Home Dubai</h3>
-                            <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px; line-height: 1.6;">
-                                Premier Dubai musical academy portal with custom hosting configuration, speed optimization, and dynamic course booking.
-                            </p>
-                            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px;">
-                                <span class="badge badge-cyan" style="font-size: 0.7rem;">WordPress</span>
-                                <span class="badge badge-cyan" style="font-size: 0.7rem;">Elementor</span>
-                                <span class="badge badge-cyan" style="font-size: 0.7rem;">Web Hosting</span>
-                            </div>
+                            <a href="https://musichomedxb.ae/" target="_blank" class="btn-custom-primary w-100" style="font-size: 0.88rem;">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
                         </div>
-                        <a href="https://musichomedxb.ae/" target="_blank" class="btn-primary" style="width: 100%; justify-content: center; font-size: 0.88rem;">
-                            <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
-                        </a>
                     </div>
 
                     <!-- Project 2: Medica Hospital Dubai -->
-                    <div class="glass-card project-card reveal" style="padding: 24px;">
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                                <span class="badge badge-cyan"><i class="fas fa-hospital"></i> Healthcare</span>
-                                <i class="fas fa-heart-pulse" style="color: var(--primary);"></i>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="glass-card project-card reveal p-4 h-100">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge-custom badge-cyan"><i class="fas fa-hospital"></i> Healthcare</span>
+                                    <i class="fas fa-heart-pulse" style="color: var(--primary);"></i>
+                                </div>
+                                <h3 class="h5 fw-bold text-white mb-2">Medica Hospital Dubai</h3>
+                                <p class="small text-muted mb-3" style="line-height: 1.6;">
+                                    Modern hospital platform based in Dubai, UAE, built with WordPress, dynamic scheduling, and mobile optimization.
+                                </p>
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge-custom badge-cyan" style="font-size: 0.7rem;">WordPress</span>
+                                    <span class="badge-custom badge-cyan" style="font-size: 0.7rem;">Healthcare</span>
+                                    <span class="badge-custom badge-cyan" style="font-size: 0.7rem;">Dubai, UAE</span>
+                                </div>
                             </div>
-                            <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 10px;">Medica Hospital Dubai</h3>
-                            <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px; line-height: 1.6;">
-                                Modern hospital platform based in Dubai, UAE, built with WordPress, dynamic scheduling, and mobile optimization.
-                            </p>
-                            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px;">
-                                <span class="badge badge-cyan" style="font-size: 0.7rem;">WordPress</span>
-                                <span class="badge badge-cyan" style="font-size: 0.7rem;">Healthcare</span>
-                                <span class="badge badge-cyan" style="font-size: 0.7rem;">Dubai, UAE</span>
-                            </div>
+                            <a href="https://soharon.co.uk/ark/" target="_blank" class="btn-custom-secondary w-100" style="font-size: 0.88rem;">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
                         </div>
-                        <a href="https://soharon.co.uk/ark/" target="_blank" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.88rem;">
-                            <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
-                        </a>
                     </div>
 
                     <!-- Project 3: Walnut Infratech -->
-                    <div class="glass-card project-card reveal" style="padding: 24px;">
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                                <span class="badge badge-cyan"><i class="fas fa-shield-halved"></i> Security Infra</span>
-                                <i class="fas fa-house-lock" style="color: var(--primary);"></i>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="glass-card project-card reveal p-4 h-100">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge-custom badge-cyan"><i class="fas fa-shield-halved"></i> Security Infra</span>
+                                    <i class="fas fa-house-lock" style="color: var(--primary);"></i>
+                                </div>
+                                <h3 class="h5 fw-bold text-white mb-2">Walnut Infratech</h3>
+                                <p class="small text-muted mb-3" style="line-height: 1.6;">
+                                    Dubai-based infrastructure solution company providing security systems, smart home solutions, and web hosting.
+                                </p>
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge-custom badge-cyan" style="font-size: 0.7rem;">WordPress</span>
+                                    <span class="badge-custom badge-cyan" style="font-size: 0.7rem;">Infrastructure</span>
+                                    <span class="badge-custom badge-cyan" style="font-size: 0.7rem;">Dubai</span>
+                                </div>
                             </div>
-                            <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 10px;">Walnut Infratech</h3>
-                            <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px; line-height: 1.6;">
-                                Dubai-based infrastructure solution company providing security systems, smart home solutions, and web hosting.
-                            </p>
-                            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px;">
-                                <span class="badge badge-cyan" style="font-size: 0.7rem;">WordPress</span>
-                                <span class="badge badge-cyan" style="font-size: 0.7rem;">Infrastructure</span>
-                                <span class="badge badge-cyan" style="font-size: 0.7rem;">Dubai</span>
-                            </div>
+                            <a href="https://walnutinfratech.com/" target="_blank" class="btn-custom-secondary w-100" style="font-size: 0.88rem;">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
                         </div>
-                        <a href="https://walnutinfratech.com/" target="_blank" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.88rem;">
-                            <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
-                        </a>
                     </div>
 
                     <!-- Project 4: Golden Galaxy Construction -->
-                    <div class="glass-card project-card reveal" style="padding: 24px;">
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                                <span class="badge badge-amber"><i class="fas fa-helmet-safety"></i> Construction</span>
-                                <i class="fas fa-building" style="color: #f59e0b;"></i>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="glass-card project-card reveal p-4 h-100">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge-custom badge-amber"><i class="fas fa-helmet-safety"></i> Construction</span>
+                                    <i class="fas fa-building" style="color: #f59e0b;"></i>
+                                </div>
+                                <h3 class="h5 fw-bold text-white mb-2">Golden Galaxy Construction</h3>
+                                <p class="small text-muted mb-3" style="line-height: 1.6;">
+                                    Construction & engineering company website in Dubai engineered for project showcases and client consultation.
+                                </p>
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge-custom badge-amber" style="font-size: 0.7rem;">WordPress</span>
+                                    <span class="badge-custom badge-amber" style="font-size: 0.7rem;">Construction</span>
+                                    <span class="badge-custom badge-amber" style="font-size: 0.7rem;">Dubai, UAE</span>
+                                </div>
                             </div>
-                            <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 10px;">Golden Galaxy Construction</h3>
-                            <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px; line-height: 1.6;">
-                                Construction & engineering company website in Dubai engineered for project showcases and client consultation.
-                            </p>
-                            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px;">
-                                <span class="badge badge-amber" style="font-size: 0.7rem;">WordPress</span>
-                                <span class="badge badge-amber" style="font-size: 0.7rem;">Construction</span>
-                                <span class="badge badge-amber" style="font-size: 0.7rem;">Dubai, UAE</span>
-                            </div>
+                            <a href="https://ggcdxb.com/" target="_blank" class="btn-custom-secondary w-100" style="font-size: 0.88rem;">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
                         </div>
-                        <a href="https://ggcdxb.com/" target="_blank" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.88rem;">
-                            <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
-                        </a>
                     </div>
 
                     <!-- Project 5: Western Bainoona Group -->
-                    <div class="glass-card project-card reveal" style="padding: 24px;">
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                                <span class="badge badge-amber"><i class="fas fa-city"></i> Infrastructure</span>
-                                <i class="fas fa-trowel-bricks" style="color: #f59e0b;"></i>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="glass-card project-card reveal p-4 h-100">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge-custom badge-amber"><i class="fas fa-city"></i> Infrastructure</span>
+                                    <i class="fas fa-trowel-bricks" style="color: #f59e0b;"></i>
+                                </div>
+                                <h3 class="h5 fw-bold text-white mb-2">Western Bainoona Group</h3>
+                                <p class="small text-muted mb-3" style="line-height: 1.6;">
+                                    Infrastructure and large-scale construction group website developed with responsive WordPress architecture.
+                                </p>
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge-custom badge-amber" style="font-size: 0.7rem;">WordPress</span>
+                                    <span class="badge-custom badge-amber" style="font-size: 0.7rem;">Infrastructure</span>
+                                </div>
                             </div>
-                            <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 10px;">Western Bainoona Group</h3>
-                            <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px; line-height: 1.6;">
-                                Infrastructure and large-scale construction group website developed with responsive WordPress architecture.
-                            </p>
-                            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px;">
-                                <span class="badge badge-amber" style="font-size: 0.7rem;">WordPress</span>
-                                <span class="badge badge-amber" style="font-size: 0.7rem;">Infrastructure</span>
-                            </div>
+                            <a href="https://westernbainoonagroup.com/" target="_blank" class="btn-custom-secondary w-100" style="font-size: 0.88rem;">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
                         </div>
-                        <a href="https://westernbainoonagroup.com/" target="_blank" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.88rem;">
-                            <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
-                        </a>
                     </div>
 
                     <!-- Project 6: Rawatan Ltd -->
-                    <div class="glass-card project-card reveal" style="padding: 24px;">
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                                <span class="badge badge-violet"><i class="fas fa-language"></i> Multi-Lingual</span>
-                                <i class="fas fa-wheat-awn" style="color: var(--secondary);"></i>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="glass-card project-card reveal p-4 h-100">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge-custom badge-violet"><i class="fas fa-language"></i> Multi-Lingual</span>
+                                    <i class="fas fa-wheat-awn" style="color: var(--secondary);"></i>
+                                </div>
+                                <h3 class="h5 fw-bold text-white mb-2">Rawatan Ltd Portal</h3>
+                                <p class="small text-muted mb-3" style="line-height: 1.6;">
+                                    Agricultural solution enterprise website built with 3 language localized support (English, Kurdish, and Arabic).
+                                </p>
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge-custom badge-violet" style="font-size: 0.7rem;">English</span>
+                                    <span class="badge-custom badge-violet" style="font-size: 0.7rem;">Kurdish</span>
+                                    <span class="badge-custom badge-violet" style="font-size: 0.7rem;">Arabic</span>
+                                </div>
                             </div>
-                            <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 10px;">Rawatan Ltd Portal</h3>
-                            <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px; line-height: 1.6;">
-                                Agricultural solution enterprise website built with 3 language localized support (English, Kurdish, and Arabic).
-                            </p>
-                            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px;">
-                                <span class="badge badge-violet" style="font-size: 0.7rem;">English</span>
-                                <span class="badge badge-violet" style="font-size: 0.7rem;">Kurdish</span>
-                                <span class="badge badge-violet" style="font-size: 0.7rem;">Arabic</span>
-                            </div>
+                            <a href="https://rawatanltd.com/" target="_blank" class="btn-custom-secondary w-100" style="font-size: 0.88rem;">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
                         </div>
-                        <a href="https://rawatanltd.com/" target="_blank" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.88rem;">
-                            <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
-                        </a>
                     </div>
 
                     <!-- Project 7: Relyon World -->
-                    <div class="glass-card project-card reveal" style="padding: 24px;">
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                                <span class="badge badge-violet"><i class="fas fa-globe-europe"></i> Multi-Lingual</span>
-                                <i class="fas fa-city" style="color: var(--secondary);"></i>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="glass-card project-card reveal p-4 h-100">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge-custom badge-violet"><i class="fas fa-globe-europe"></i> Multi-Lingual</span>
+                                    <i class="fas fa-city" style="color: var(--secondary);"></i>
+                                </div>
+                                <h3 class="h5 fw-bold text-white mb-2">Relyon World</h3>
+                                <p class="small text-muted mb-3" style="line-height: 1.6;">
+                                    French-based construction company website developed with dual-language support (English & French).
+                                </p>
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge-custom badge-violet" style="font-size: 0.7rem;">English</span>
+                                    <span class="badge-custom badge-violet" style="font-size: 0.7rem;">French</span>
+                                    <span class="badge-custom badge-violet" style="font-size: 0.7rem;">Construction</span>
+                                </div>
                             </div>
-                            <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 10px;">Relyon World</h3>
-                            <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px; line-height: 1.6;">
-                                French-based construction company website developed with dual-language support (English & French).
-                            </p>
-                            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px;">
-                                <span class="badge badge-violet" style="font-size: 0.7rem;">English</span>
-                                <span class="badge badge-violet" style="font-size: 0.7rem;">French</span>
-                                <span class="badge badge-violet" style="font-size: 0.7rem;">Construction</span>
-                            </div>
+                            <a href="https://relyonworld.com/" target="_blank" class="btn-custom-secondary w-100" style="font-size: 0.88rem;">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
                         </div>
-                        <a href="https://relyonworld.com/" target="_blank" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.88rem;">
-                            <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
-                        </a>
                     </div>
 
                     <!-- Project 8: Rosewood Properties -->
-                    <div class="glass-card project-card reveal" style="padding: 24px;">
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                                <span class="badge badge-emerald"><i class="fas fa-building"></i> Real Estate</span>
-                                <i class="fas fa-key" style="color: var(--accent);"></i>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="glass-card project-card reveal p-4 h-100">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge-custom badge-emerald"><i class="fas fa-building"></i> Real Estate</span>
+                                    <i class="fas fa-key" style="color: var(--accent);"></i>
+                                </div>
+                                <h3 class="h5 fw-bold text-white mb-2">Rosewood Properties Dubai</h3>
+                                <p class="small text-muted mb-3" style="line-height: 1.6;">
+                                    High-end real estate listing platform in Dubai engineered for mobile responsiveness and fast asset delivery.
+                                </p>
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge-custom badge-emerald" style="font-size: 0.7rem;">WordPress</span>
+                                    <span class="badge-custom badge-emerald" style="font-size: 0.7rem;">Real Estate</span>
+                                    <span class="badge-custom badge-emerald" style="font-size: 0.7rem;">Dubai</span>
+                                </div>
                             </div>
-                            <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 10px;">Rosewood Properties Dubai</h3>
-                            <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px; line-height: 1.6;">
-                                High-end real estate listing platform in Dubai engineered for mobile responsiveness and fast asset delivery.
-                            </p>
-                            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px;">
-                                <span class="badge badge-emerald" style="font-size: 0.7rem;">WordPress</span>
-                                <span class="badge badge-emerald" style="font-size: 0.7rem;">Real Estate</span>
-                                <span class="badge badge-emerald" style="font-size: 0.7rem;">Dubai</span>
-                            </div>
+                            <a href="https://rosewood-properties.com/" target="_blank" class="btn-custom-secondary w-100" style="font-size: 0.88rem;">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
                         </div>
-                        <a href="https://rosewood-properties.com/" target="_blank" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.88rem;">
-                            <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
-                        </a>
                     </div>
 
                     <!-- Project 9: Creative Design -->
-                    <div class="glass-card project-card reveal" style="padding: 24px;">
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                                <span class="badge badge-cyan"><i class="fas fa-code"></i> Front-End</span>
-                                <i class="fas fa-palette" style="color: var(--primary);"></i>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="glass-card project-card reveal p-4 h-100">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge-custom badge-cyan"><i class="fas fa-code"></i> Front-End</span>
+                                    <i class="fas fa-palette" style="color: var(--primary);"></i>
+                                </div>
+                                <h3 class="h5 fw-bold text-white mb-2">Creative Design Studio</h3>
+                                <p class="small text-muted mb-3" style="line-height: 1.6;">
+                                    Modern creative UI web design interface crafted with raw HTML5 and custom CSS3 styling.
+                                </p>
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge-custom badge-cyan" style="font-size: 0.7rem;">HTML5</span>
+                                    <span class="badge-custom badge-cyan" style="font-size: 0.7rem;">CSS3</span>
+                                    <span class="badge-custom badge-cyan" style="font-size: 0.7rem;">GitHub Pages</span>
+                                </div>
                             </div>
-                            <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 10px;">Creative Design Studio</h3>
-                            <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px; line-height: 1.6;">
-                                Modern creative UI web design interface crafted with raw HTML5 and custom CSS3 styling.
-                            </p>
-                            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px;">
-                                <span class="badge badge-cyan" style="font-size: 0.7rem;">HTML5</span>
-                                <span class="badge badge-cyan" style="font-size: 0.7rem;">CSS3</span>
-                                <span class="badge badge-cyan" style="font-size: 0.7rem;">GitHub Pages</span>
-                            </div>
+                            <a href="https://suaib31.github.io/editorq.github.io/" target="_blank" class="btn-custom-secondary w-100" style="font-size: 0.88rem;">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
                         </div>
-                        <a href="https://suaib31.github.io/editorq.github.io/" target="_blank" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.88rem;">
-                            <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
-                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Certifications Section -->
-        <section id="certifications" style="padding: 70px 0;">
+        <section id="certifications" class="py-4 py-md-5">
             <div class="container">
-                <div style="text-align: center; margin-bottom: 44px;">
-                    <div class="badge badge-amber" style="margin-bottom: 12px;">
+                <div class="text-center mb-4 pb-2">
+                    <div class="badge-custom badge-amber mb-2">
                         <i class="fas fa-award"></i> CREDENTIALS
                     </div>
-                    <h2 style="font-size: 2.2rem; font-weight: 800;">Professional Certifications</h2>
+                    <h2 class="fw-bold text-white" style="font-size: 2.2rem;">Professional Certifications</h2>
                 </div>
 
-                <div class="grid-3">
+                <div class="row g-4">
                     <!-- Cert 1: ISO 27001 -->
-                    <div class="glass-card reveal" style="padding: 24px;">
-                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                            <i class="fas fa-shield-halved" style="font-size: 1.8rem; color: #f59e0b;"></i>
-                            <div>
-                                <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">ISO/IEC 27001:2022 ISMS</h3>
-                                <p style="font-size: 0.82rem; color: var(--text-muted);">Internal Auditor Training | Brixton & Astian</p>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="glass-card reveal p-4 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <i class="fas fa-shield-halved fs-2" style="color: #f59e0b;"></i>
+                                <div>
+                                    <h3 class="h6 fw-bold text-white mb-1">ISO/IEC 27001:2022 ISMS</h3>
+                                    <p class="small text-muted mb-0">Internal Auditor Training | Brixton & Astian</p>
+                                </div>
                             </div>
+                            <a href="Suaib -ISMS 2024 Certificate.pdf" target="_blank" class="btn-custom-secondary w-100 mt-auto" style="font-size: 0.85rem;">
+                                <i class="fas fa-file-pdf"></i> View Certificate PDF
+                            </a>
                         </div>
-                        <a href="Suaib -ISMS 2024 Certificate.pdf" target="_blank" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.85rem;">
-                            <i class="fas fa-file-pdf"></i> View Certificate PDF
-                        </a>
                     </div>
 
                     <!-- Cert 2: Cloud Computing -->
-                    <div class="glass-card reveal" style="padding: 24px;">
-                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                            <i class="fas fa-cloud" style="font-size: 1.8rem; color: var(--primary);"></i>
-                            <div>
-                                <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">Cloud Computing</h3>
-                                <p style="font-size: 0.82rem; color: var(--text-muted);">Practical Introduction | EC-Council</p>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="glass-card reveal p-4 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <i class="fas fa-cloud fs-2" style="color: var(--primary);"></i>
+                                <div>
+                                    <h3 class="h6 fw-bold text-white mb-1">Cloud Computing</h3>
+                                    <p class="small text-muted mb-0">Practical Introduction | EC-Council</p>
+                                </div>
                             </div>
+                            <a href="https://learn.eccouncil.org/certificate/7fa8bfa7-6877-4575-9baa-3bb5b5bb7a5a?logged=false" target="_blank" class="btn-custom-secondary w-100 mt-auto" style="font-size: 0.85rem;">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Verify Credential
+                            </a>
                         </div>
-                        <a href="https://learn.eccouncil.org/certificate/7fa8bfa7-6877-4575-9baa-3bb5b5bb7a5a?logged=false" target="_blank" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.85rem;">
-                            <i class="fas fa-arrow-up-right-from-square"></i> Verify Credential
-                        </a>
                     </div>
 
                     <!-- Cert 3: Ethical Hacking -->
-                    <div class="glass-card reveal" style="padding: 24px;">
-                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                            <i class="fas fa-user-ninja" style="font-size: 1.8rem; color: var(--secondary);"></i>
-                            <div>
-                                <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">Ethical Hacking Essentials</h3>
-                                <p style="font-size: 0.82rem; color: var(--text-muted);">EHE Certification | EC-Council</p>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="glass-card reveal p-4 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <i class="fas fa-user-ninja fs-2" style="color: var(--secondary);"></i>
+                                <div>
+                                    <h3 class="h6 fw-bold text-white mb-1">Ethical Hacking Essentials</h3>
+                                    <p class="small text-muted mb-0">EHE Certification | EC-Council</p>
+                                </div>
                             </div>
+                            <a href="https://learn.eccouncil.org/certificate/a438e9e8-3dfc-45b6-96c6-d9969efc6ca6?logged=false" target="_blank" class="btn-custom-secondary w-100 mt-auto" style="font-size: 0.85rem;">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Verify Credential
+                            </a>
                         </div>
-                        <a href="https://learn.eccouncil.org/certificate/a438e9e8-3dfc-45b6-96c6-d9969efc6ca6?logged=false" target="_blank" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.85rem;">
-                            <i class="fas fa-arrow-up-right-from-square"></i> Verify Credential
-                        </a>
                     </div>
 
                     <!-- Cert 4: Digital Forensics -->
-                    <div class="glass-card reveal" style="padding: 24px;">
-                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                            <i class="fas fa-magnifying-glass" style="font-size: 1.8rem; color: var(--accent);"></i>
-                            <div>
-                                <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">Digital Forensics Essentials</h3>
-                                <p style="font-size: 0.82rem; color: var(--text-muted);">DFE Certification | EC-Council</p>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="glass-card reveal p-4 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <i class="fas fa-magnifying-glass fs-2" style="color: var(--accent);"></i>
+                                <div>
+                                    <h3 class="h6 fw-bold text-white mb-1">Digital Forensics Essentials</h3>
+                                    <p class="small text-muted mb-0">DFE Certification | EC-Council</p>
+                                </div>
                             </div>
+                            <a href="https://learn.eccouncil.org/certificate/abf71e8b-896b-4868-8ac2-a1b038695dd3?logged=false" target="_blank" class="btn-custom-secondary w-100 mt-auto" style="font-size: 0.85rem;">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Verify Credential
+                            </a>
                         </div>
-                        <a href="https://learn.eccouncil.org/certificate/abf71e8b-896b-4868-8ac2-a1b038695dd3?logged=false" target="_blank" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.85rem;">
-                            <i class="fas fa-arrow-up-right-from-square"></i> Verify Credential
-                        </a>
                     </div>
 
                     <!-- Cert 5: Web Engineering -->
-                    <div class="glass-card reveal" style="padding: 24px;">
-                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                            <i class="fas fa-laptop-code" style="font-size: 1.8rem; color: #38bdf8;"></i>
-                            <div>
-                                <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">Web Design & Development</h3>
-                                <p style="font-size: 0.82rem; color: var(--text-muted);">Soharon Infotech, UAE</p>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="glass-card reveal p-4 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <i class="fas fa-laptop-code fs-2" style="color: #38bdf8;"></i>
+                                <div>
+                                    <h3 class="h6 fw-bold text-white mb-1">Web Design & Development</h3>
+                                    <p class="small text-muted mb-0">Soharon Infotech, UAE</p>
+                                </div>
                             </div>
+                            <a href="SUAIB Cert.pdf" target="_blank" class="btn-custom-secondary w-100 mt-auto" style="font-size: 0.85rem;">
+                                <i class="fas fa-file-pdf"></i> View Certificate PDF
+                            </a>
                         </div>
-                        <a href="SUAIB Cert.pdf" target="_blank" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.85rem;">
-                            <i class="fas fa-file-pdf"></i> View Certificate PDF
-                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" style="padding: 80px 0;">
+        <section id="contact" class="py-4 py-md-5">
             <div class="container">
-                <div class="glass-card reveal" style="padding: 48px; text-align: center; max-width: 860px; margin: 0 auto; border-color: var(--border-hover);">
-                    <div class="badge badge-cyan" style="margin-bottom: 16px;">
+                <div class="glass-card reveal p-4 p-md-5 text-center mx-auto" style="max-width: 860px; border-color: var(--border-hover);">
+                    <div class="badge-custom badge-cyan mb-3">
                         <i class="fas fa-comments"></i> LET'S CONNECT
                     </div>
-                    <h2 style="font-size: 2.4rem; font-weight: 800; margin-bottom: 16px;">Ready to Automate & Scale?</h2>
-                    <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 36px auto;">
-                        Whether you are looking for a Cloud DevOps Engineer, CI/CD pipeline automation specialist, or AI Agent workflow architect, feel free to get in touch!
+                    <h2 class="fw-bold text-white mb-3" style="font-size: 2.2rem;">Ready to Automate & Scale?</h2>
+                    <p class="text-muted fs-6 max-w-600 mx-auto mb-4" style="max-width: 600px;">
+                        Whether you are looking for a Software Engineer, Cloud DevOps specialist, or AI Agent workflow architect, feel free to get in touch!
                     </p>
 
-                    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 36px;">
+                    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 mb-4">
                         <!-- Email Card -->
-                        <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); padding: 16px 24px; border-radius: 12px; display: flex; align-items: center; gap: 12px;">
-                            <i class="fas fa-envelope text-gradient-cyan" style="font-size: 1.4rem;"></i>
-                            <span style="font-family: var(--font-mono); font-size: 0.95rem; color: #fff;">suaib2004@gmail.com</span>
-                            <button onclick="copyToClipboard('suaib2004@gmail.com')" style="background: none; border: none; color: var(--primary); cursor: pointer; font-size: 1.1rem;" title="Copy Email">
+                        <div class="w-100 w-md-auto d-flex align-items-center justify-content-center gap-2 p-3 rounded-3" style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color);">
+                            <i class="fas fa-envelope text-gradient-cyan fs-5"></i>
+                            <span class="font-mono small text-white">suaib2004@gmail.com</span>
+                            <button onclick="copyToClipboard('suaib2004@gmail.com')" class="btn btn-link p-0 text-decoration-none" style="color: var(--primary);" title="Copy Email">
                                 <i class="fas fa-copy"></i>
                             </button>
                         </div>
 
                         <!-- LinkedIn -->
-                        <a href="https://in.linkedin.com/in/suaib-s-784294276" target="_blank" style="text-decoration: none; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); padding: 16px 24px; border-radius: 12px; display: flex; align-items: center; gap: 12px; color: #fff; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
-                            <i class="fab fa-linkedin" style="font-size: 1.4rem; color: #0a66c2;"></i>
-                            <span style="font-family: var(--font-mono); font-size: 0.95rem;">LinkedIn Profile</span>
-                            <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.8rem; color: var(--text-dim);"></i>
+                        <a href="https://in.linkedin.com/in/suaib-s-784294276" target="_blank" class="w-100 w-md-auto d-flex align-items-center justify-content-center gap-2 p-3 rounded-3 text-decoration-none text-white" style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color);">
+                            <i class="fab fa-linkedin fs-5" style="color: #0a66c2;"></i>
+                            <span class="font-mono small">LinkedIn Profile</span>
+                            <i class="fas fa-arrow-up-right-from-square small text-muted"></i>
                         </a>
 
                         <!-- GitHub -->
-                        <a href="https://github.com/suaib31/" target="_blank" style="text-decoration: none; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); padding: 16px 24px; border-radius: 12px; display: flex; align-items: center; gap: 12px; color: #fff; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
-                            <i class="fab fa-github" style="font-size: 1.4rem; color: #fff;"></i>
-                            <span style="font-family: var(--font-mono); font-size: 0.95rem;">GitHub / suaib31</span>
-                            <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.8rem; color: var(--text-dim);"></i>
+                        <a href="https://github.com/suaib31/" target="_blank" class="w-100 w-md-auto d-flex align-items-center justify-content-center gap-2 p-3 rounded-3 text-decoration-none text-white" style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color);">
+                            <i class="fab fa-github fs-5 text-white"></i>
+                            <span class="font-mono small">GitHub / suaib31</span>
+                            <i class="fas fa-arrow-up-right-from-square small text-muted"></i>
                         </a>
                     </div>
 
-                    <a href="Suaib_Resume.pdf" download class="btn-primary" style="padding: 14px 32px; font-size: 1rem;">
+                    <a href="Suaib_Resume.pdf" download class="btn-custom-primary px-4 py-3 fs-6">
                         <i class="fas fa-download"></i> Download Full Resume (PDF)
                     </a>
                 </div>
@@ -1248,49 +1383,36 @@
     </main>
 
     <!-- Footer -->
-    <footer style="background: #050811; border-top: 1px solid rgba(255,255,255,0.05); padding: 30px 0; text-align: center; color: var(--text-dim); font-size: 0.88rem; font-family: var(--font-mono);">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+    <footer class="py-4 border-top" style="background: #050811; border-color: rgba(255,255,255,0.05) !important;">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center gap-3 font-mono small text-muted">
             <div>
-                &copy; 2026 <strong>Suaib S</strong> &mdash; DevOps & Cloud Engineer. All rights reserved.
+                &copy; 2026 <strong>Suaib S</strong> &mdash; Software & DevOps Engineer. All rights reserved.
             </div>
-            <div style="display: flex; align-items: center; gap: 8px;">
+            <div class="d-flex align-items-center gap-2">
                 <span class="pulse-dot"></span> System Status: 100% Operational
             </div>
         </div>
     </footer>
 
-    <!-- Toast Banner -->
+    <!-- Toast Notification Banner -->
     <div id="toast">Copied to clipboard!</div>
 
-    <!-- Scripts -->
+    <!-- Bootstrap 5 Bundle JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Interactive Custom Logic -->
     <script>
-        // Mobile Nav Drawer Toggle
-        function toggleMobileNav() {
-            const nav = id('mobileNav');
-            const icon = id('menu-icon');
-            nav.classList.toggle('open');
-            if (nav.classList.contains('open')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
-        }
-
-        function id(e) { return document.getElementById(e); }
-
         // Skill Filtering
         function filterSkills(category, btn) {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            const cards = document.querySelectorAll('.skill-card');
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'flex';
+            const items = document.querySelectorAll('.skill-item');
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
                 } else {
-                    card.style.display = 'none';
+                    item.style.display = 'none';
                 }
             });
         }
@@ -1298,14 +1420,14 @@
         // Copy to clipboard with toast
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
-                const toast = id('toast');
+                const toast = document.getElementById('toast');
                 toast.innerText = 'Copied "' + text + '" to clipboard!';
                 toast.className = 'show';
                 setTimeout(() => { toast.className = toast.className.replace('show', ''); }, 3000);
             });
         }
 
-        // Interactive Terminal Typewriter Effect
+        // CLI Terminal Typewriter Effect
         const commands = [
             "aws ec2 describe-instances --region ap-south-1",
             "n8n run --workflow agentic-llm-pipeline",
@@ -1313,7 +1435,7 @@
             "kubectl get pods -n devops-production"
         ];
         let cmdIdx = 0, charIdx = 0, isDeleting = false;
-        const target = id("typing-text");
+        const target = document.getElementById("typing-text");
 
         function typeLoop() {
             if (!target) return;
@@ -1339,7 +1461,7 @@
         }
         typeLoop();
 
-        // Scroll reveal logic
+        // Scroll reveal animation observer
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
